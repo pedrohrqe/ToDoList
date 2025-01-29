@@ -192,7 +192,7 @@ const addTodoLocalStorage = (todo) => {
     todos.push(todo)
 
     localStorage.setItem("todos", JSON.stringify(todos))
-    
+
     countTodosLocalStorage(todos)
 }
 
@@ -268,7 +268,7 @@ const loadSidebarShow = () => {
 }
 
 const setSidebarShow = () => {
-    if (!sidebar.classList.contains("retract")) {
+    if (sidebar.classList.contains("retract")) {
         localStorage.setItem("sidebarShow", false)
     } else {
         localStorage.setItem("sidebarShow", true)
