@@ -192,6 +192,8 @@ const addTodoLocalStorage = (todo) => {
     todos.push(todo)
 
     localStorage.setItem("todos", JSON.stringify(todos))
+    
+    countTodosLocalStorage(todos)
 }
 
 const loadTodos = () => {
