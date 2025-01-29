@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do - Pedrohrqe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/to_do_icon.svg" type="image/x-icon">
+    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div id="page-title">
+            <h1>To Do by pedrohrqe</h1>
+        </div>
+        <div id="search-todo">
+            <input type="text" placeholder="Pesquisar tarefa...">
+        </div>
+    </header>
+    <main>
+        <div id="sidebar" class="retract">
+            <button id="sidebar-view-switch"><i class="fa-solid fa-bars"></i></button>
+            <h3 id="filter-container-title">Filtrar</h3>
+            <div id="filter-container">
+                <div class="filter-option" id="all-todos">
+                    <p>Todas</p>
+                    <p class="filter-option-count">10</p>
+                </div>
+                <div class="filter-option" id="completed-todos">
+                    <p>Completas</p>
+                    <p class="filter-option-count">7</p>
+                </div>
+                <div class="filter-option" id="pending-todos">
+                    <p>Pendentes</p>
+                    <p class="filter-option-count">3</p>
+                </div>
+            </div>
+        </div>
+        <div id="todo-list">
+            <div class="todo-add">
+                <input type="text" placeholder="Digite sua nova tarefa">
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Pedro Henrique | 2025 | Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>

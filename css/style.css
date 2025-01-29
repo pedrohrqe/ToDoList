@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #f0f0f0;
+    --background-color: #ffffff;
+    --secondary-color: #478065;
+    --tertiary-color: #a1610c;
+    --accent-color: #1c67f3;
+    --header-color: #2e2c42;
+    --border-color: #dddddd;
+    --border-color-2: #aaaaaa;
+    --filter-option-color: #fff;
+    --text-color: #fff;
+    --todo-complete-color: #0c6d0c3a;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--filter-option-color);
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--main-color);
+}
+
+input:focus {
+    outline: 1px solid var(--accent-color);
+}
+
+p,
+h4,
+h1,
+i {
+    pointer-events: none;
+    user-select: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#page-title {
+    flex: 1;
+    padding: 20px;
+}
+
+#page-title h1 {
+    color: var(--text-color);
+    font-size: 2.1875rem;
+    min-width: fit-content;
+    font-weight: 300;
+    text-shadow: -2px 2px 4px var(--header-color);
+}
+
+#search-todo {
+    flex: 4;
+}
+
+#search-todo input {
+    max-width: 500px;
+    border: none;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    min-height: fit-content;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    background-color: var(--background-color);
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 400px;
+    transition: 400ms;
+}
+
+#sidebar-view-switch {
+    align-self: flex-end;
+}
+
+#filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    opacity: 1;
+    transition: 400ms;
+}
+
+#sidebar.retract {
+    padding: 10px;
+    max-width: 60px;
+    transition: 400ms;
+}
+
+#sidebar.retract #filter-container {
+    opacity: 0;
+    transition: 400ms;
+}
+
+#filter-container-title {
+    display: none;
+}
+
+#filter-container h4 {
+    font-weight: 500;
+}
+
+.filter-option {
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 300;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+.filter-option.selected {
+    border: 1px solid var(--tertiary-color);
+    box-shadow: 0px 0px 5px var(--tertiary-color);
+}
+
+#todo-list {
+    margin: 20px 0px;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.todo-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+}
+
+.todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    gap: 5px
+}
+
+.todo:focus {
+    outline: 1px solid var(--tertiary-color);
+    box-shadow: 0px 0px 5px var(--tertiary-color);
+}
+
+.todo.hide {
+    display: none;
+}
+
+.todo.done {
+    background-color: var(--todo-complete-color);
+}
+
+.todo.done #todo-title {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+#todo-title {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px;
+    font-weight: 300;
+}
+
+.todo-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    padding: 10px 0px;
+}
+
+.hide {
+    display: none !important;
+}
+
+@media (hover :hover) {
+
+    .todo:hover,
+    .filter-option:hover {
+        outline: 1px solid var(--accent-color);
+    }
+
+    button:hover {
+        transition: 300ms;
+        color: var(--text-color);
+        background-color: var(--accent-color);
+        outline: none;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        min-height: fit-content;
+        padding: 10px;
+    }
+
+    #search-todo {
+        display: flex;
+        flex: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #search-todo input {
+        max-width: 80%;
+    }
+
+    #sidebar {
+        margin: 0;
+        min-width: 100%;
+        box-sizing: border-box;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 160px;
+        max-height: 160px;
+        height: 160px;
+    }
+
+    #sidebar-view-switch {
+        align-self: flex-start;
+        min-width: 40px;
+    }
+
+    #sidebar.retract {
+        min-width: 100%;
+        min-height: 60px;
+        max-height: 60px;
+        height: 60px;
+        align-items: center;
+    }
+
+    #sidebar.retract #filter-container {
+        max-height: 40px;
+        height: 40px;
+    }
+
+    #filter-container-title {
+        display: flex;
+        transition: 400ms;
+        opacity: 0;
+    }
+
+    #sidebar.retract #filter-container-title {
+        transition: 400ms;
+        opacity: 1;
+    }
+
+    #todo-list {
+        width: 100%;
+        margin: 0;
+    }
+
+    .todo,
+    .todo-add {
+        width: 100%;
+        margin: 0;
+
+    }
+
+    #filter-container {
+        padding: 0;
+        margin: 0;
+    }
+
+
+}
