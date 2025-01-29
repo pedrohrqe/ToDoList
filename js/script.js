@@ -258,9 +258,9 @@ const removeTodoLocalStorage = (todoText) => {
 }
 
 const loadSidebarShow = () => {
-    const sidebarShow = JSON.parse(localStorage.getItem("sidebarShow")) || []
+    const sidebarShow = JSON.parse(localStorage.getItem("sidebarShow")) ?? false
 
-    if (sidebarShow === true) {
+    if (!sidebarShow === true) {
         sidebar.classList.add("retract")
     } else if (sidebarShow === false) {
         sidebar.classList.remove("retract")
